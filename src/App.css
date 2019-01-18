@@ -1,32 +1,79 @@
-.App {
-  text-align: center;
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: lightgray;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.logReg{
+    text-decoration: none;
+    background-color: blue;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+a{
+    text-decoration: none;
+    color: black;
 }
 
-.App-link {
-  color: #61dafb;
+.login{
+    margin-bottom: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.register{
+    margin-top: 30px;
+}
+
+input{
+    display: block;
+    border: none;
+    background-color: black;
+    color: white;
+    padding: 7px 20px;
+    border-radius: 10px;
+}
+
+option{
+    border: none;
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+nav a{
+    padding: 10px;
+    color: black;
+}
+
+nav a:hover{
+    background-color: #989898;
+}
+
+button{
+    padding: 10px;
+    background-color: lightblue;
+    border-radius: 7px;
+    border:none;
+}
+
+#results{
+    padding: 10px;
+}
+
+#cartLink{
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.form{
+    display: block;
+}
+
+.linkToPages{
+    color: white;
+}
+.linkToPages:hover{
+    background-color: lightblue;
+    text-decoration: underline;
 }

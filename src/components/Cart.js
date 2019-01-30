@@ -26,7 +26,7 @@ class Cart extends Component{
             total += book.price;
         });
 
-        return <div>$ {total}</div>
+        return <div>${total}</div>
     }
 
     checkOut(){
@@ -46,10 +46,14 @@ class Cart extends Component{
                     <a href="/signout">Sign out</a>
                 </nav>
                 <p>Cart:</p>
-                
-                {this.state.books.map(books => 
-                    <div key={books.isbn}>{books.title} by {books.author} {books.price} <button onClick={() => this.removeItem(books)}>Remove</button></div>    
-                )}
+                <div className="table">
+                    {this.state.books.map(books => 
+                        <div className="row" key={books.isbn}>
+                            <div className="bookInfo">{books.title} by {books.author} {books.price}</div>
+                            <div className="cartButton"><button onClick={() => this.removeItem(books)}>Remove</button></div>
+                        </div>    
+                    )}
+                </div>
                 {this.totalCost()}
                 {this.checkOut()}
             </div>

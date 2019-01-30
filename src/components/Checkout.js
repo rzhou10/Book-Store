@@ -21,16 +21,24 @@ class Checkout extends Component{
         document.title = "Checkout";
         axios.get(`http://localhost:8081/listOrders?acctNumber=${this.state.accNo}`).then(
             (data) => {
+                console.log(data);
                 this.setState({
-                    orderNo: data.orderNumber
+                    orderNo: data.orderNumber + 1
                 })
+                console.log(this.state.orderNo);
             }
         )
     }
 
     placeOrder = () => {
-        axios.get(`http://localhost:8081/placeOrders?orderNumber=${this.state.orderNo}`).then(() => alert("Your order has been placed!"));
-        this.props.history.push("/");
+        axios.get(`http://localhost:8081/placeOrders?orderNumber=${this.state.orderNo}`)
+        .then(
+            () => {
+                alert("Your order has been placed!");
+                this.props.history.push("/");
+            }
+        )
+        .catch(console.error());
     }
     
     render(){
@@ -65,12 +73,12 @@ class Checkout extends Component{
                     <input type="submit" value="Order" />
                 </form>
                 
-                <p>
+                <div>
                     Ship to:
-                    {this.state.firstName} {this.state.lastName}
-                    {this.state.street}
-                    {this.state.city}, {this.state.state} {this.state.zip}
-                </p>
+                    <p>{this.state.firstName} {this.state.lastName}</p>
+                    <p>{this.state.street}</p>
+                    <p>{this.state.city}, {this.state.state} {this.state.zip}</p>
+                </div>
             </div>
         );
     }

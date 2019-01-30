@@ -5,16 +5,18 @@ class Home extends Component{
         if (!localStorage.getItem("user")){
             return(
                 <div>
-                    <div className="signIn">
-                        <div className="login">
-                            <a className="logReg" href="login">Log In</a>
-                        </div>
-                        <div className="register">
-                            <a className="logReg" href="register">Register</a>
+                    <div id="signIn" className="table">
+                        <div className="row">
+                            <div id="login" className="cell">
+                                <a className="logReg" href="login">Log In</a>
+                            </div>
+                            <div id="register" className="cell">
+                                <a className="logReg" href="register">Register</a>
+                            </div>
                         </div>
                     </div>
                     <h1>Home</h1>
-                    <p>Welcome to the bookseller! Sell your books or buy your own!</p>
+                    <p>Welcome to the bookseller! Buy your own books at your pleasure. Please sign in to see our catalog.</p>
                 </div>
             );
         }
@@ -28,7 +30,7 @@ class Home extends Component{
                         <a href="/signout">Sign out</a>
                     </nav>
                     <h1>Home</h1>
-                    <p>Welcome to the bookseller! Sell your books or buy your own! <a className="linkToPages" href="/search">Search</a> our catalog!</p>
+                    <p>Welcome to the bookseller! Buy your own books at your pleasure. <a className="linkToPages" href="/search">Search</a> our catalog!</p>
                 </div>
             )
         }

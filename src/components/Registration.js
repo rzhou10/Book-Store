@@ -43,14 +43,18 @@ class Registration extends Component{
         }
         //if authenticated, will redirect to login page
         else{
-            const checkUsername = axios.post("http://localhost:8081/checkUsername", reqBody);
-            if (checkUsername.status === "ERROR"){
-                alert(checkUsername.message);
-            }
-            else{
-                axios.post("http://localhost:8081/register", reqBody);
-                this.props.history.push("/login");
-            }
+            const checkUsername = axios.post("http://localhost:8081/checkUsername", reqBody)
+            .then( () =>
+                {
+                    if (checkUsername.status === "ERROR"){
+                        alert(checkUsername.message);
+                    }
+                    else{
+                        axios.post("http://localhost:8081/register", reqBody);
+                        this.props.history.push("/login");
+                    }
+                }
+            )
         }
     }
 

@@ -31,16 +31,34 @@ class Account extends Component{
                     <a href="/signout">Sign out</a>
                 </nav>
                 <h2>Account Info</h2>
-                <div className="accountInfo">
-                    <p>Username: {this.state.username}</p>
-                    <p>First Name: {this.state.firstName}</p>
-                    <p>Last Name: {this.state.lastName}</p>
-                    <p>Street: {this.state.street}</p>
-                    <p>City: {this.state.city}</p>
-                    <p>State: {this.state.state}</p>
-                    <p>Zip Code: {this.state.zip}</p>
-                    <p>Phone: {this.state.phone}</p>
-                    <p>Email: {this.state.email}</p>
+                <div id="accountInfo" className="table">
+                    <div className="row">
+                        <div className="accountField">Username:</div><div className="accountValue">{this.state.username}</div>
+                    </div>
+                    <div className="row">
+                        <div className="accountField">First Name:</div><div className="accountValue">{this.state.firstName}</div>
+                    </div>
+                    <div className="row">
+                        <div className="accountField">Last Name:</div><div className="accountValue">{this.state.lastName}</div>
+                    </div>
+                    <div className="row">
+                        <div className="accountField">Street:</div><div className="accountValue">{this.state.street}</div>
+                    </div>
+                    <div className="row">
+                        <div className="accountField">City:</div><div className="accountValue">{this.state.city}</div>
+                    </div>
+                    <div className="row">
+                        <div className="accountField">State:</div><div className="accountValue">{this.state.state}</div>
+                    </div>
+                    <div className="row">
+                        <div className="accountField">Zip Code:</div><div className="accountValue">{this.state.zip}</div>
+                    </div>
+                    <div className="row">
+                       <div className="accountField">Phone:</div><div className="accountValue">{this.state.phone}</div>
+                    </div>
+                    <div className="row">
+                        <div className="accountField">Email:</div><div className="accountValue">{this.state.email}</div>
+                    </div>
                 </div>
             </div>
         )

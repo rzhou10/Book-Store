@@ -20,6 +20,7 @@ class Orders extends Component{
                 })
             }
         )
+        .catch(console.error());
     }
 
     listOfBooks(props){
@@ -38,14 +39,16 @@ class Orders extends Component{
         if (this.state.orders.length < 1){
             return <div></div>
         }
-        return (<div>
-            {this.state.orders.map(item =>
-                <div key={item.orderNumber}>
-                    {item.orderNumber} {item.orderTime} {item.total}
-                    {this.listOfBooks(item)}
-                </div>
-            )}
-        </div>)
+        return (
+            <div className="table">
+                {this.state.orders.map(item =>
+                    <div className="row" key={item.orderNumber}>
+                        {item.orderNumber} {item.orderTime} ${item.total}
+                        {this.listOfBooks(item)}
+                    </div>
+                )}
+            </div>
+        )
     }
 
     render(){

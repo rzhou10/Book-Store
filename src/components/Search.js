@@ -47,22 +47,23 @@ class Search extends Component{
     render(){
         return(
             <div>
-                <a className="linkToPages" id="cartLink" href="/cart">Cart: {this.state.cartTotal}</a>
                 <nav>
                     <a href="/">Home</a>
                     <a href="/orders">Orders</a>
                     <a href="/account">Account</a>
                     <a href="/signout">Sign out</a>
                 </nav>
+                <a className="linkToPages" id="cartLink" href="/cart">Cart: {this.state.cartTotal}</a>
                 <form className="form">
                     <label>
                         Search: <input value={this.state.query} type="text" onChange={this.handleChange} name="query" />
                     </label>
                 </form>
-                <div>
+                <div className="table">
                     {this.state.result.map(r => (
-                        <div id="results" key={r.isbn}>
-                        {r.title} by {r.author} {r.price} <button onClick={() => this.addToCart(r)}>Add to Cart.</button>
+                        <div id="results" className="row" key={r.isbn}>
+                            <div className="bookInfo">{r.title} by {r.author} {r.price}</div>
+                            <div className="cartButton"><button onClick={() => this.addToCart(r)}>Add to Cart.</button></div>
                         </div>
                     ))}
                 </div>

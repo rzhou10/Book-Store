@@ -27,8 +27,6 @@ class Login extends Component{
         }
 
         let loginData = {}
-        let stringedData = ""
-
         axios.post("http://localhost:8081/logon", reqBody)
         .then((response) => {
                 loginData["accountNumber"] = response.data.accountNumber;
@@ -41,7 +39,7 @@ class Login extends Component{
                 loginData["zip"] = response.data.zip;
                 loginData["phone"] = response.data.phone;
                 loginData["email"] = response.data.email;
-                stringedData = JSON.stringify(loginData);
+                let stringedData = JSON.stringify(loginData);
                 localStorage.setItem("user", stringedData);
                 this.props.history.push("/");
             }

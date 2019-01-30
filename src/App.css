@@ -7,7 +7,7 @@
     text-decoration: none;
     background-color: blue;
     color: white;
-    padding: 10px;
+    padding: 10px 25px;
     border-radius: 5px;
 }
 
@@ -44,6 +44,8 @@ option{
 nav a{
     padding: 10px;
     color: black;
+    margin-bottom: 10px;
+    line-height:12px;
 }
 
 nav a:hover{
@@ -62,12 +64,14 @@ button{
 }
 
 #cartLink{
-    padding: 10px;
+    margin-top: 10px;
     margin-bottom: 10px;
+    line-height:12px;
 }
 
 .form{
     display: block;
+    border: black;
 }
 
 .linkToPages{
@@ -76,4 +80,22 @@ button{
 .linkToPages:hover{
     background-color: lightblue;
     text-decoration: underline;
+}
+
+.table{
+    display: table;
+}
+
+.row{
+    display: table-row;
+}
+
+.accountInfo, .accountValue, .bookInfo, .cart{
+    display: table-cell;
+    padding: 15px 20px;
+}
+
+.cell{
+    display: table-cell;
+    padding: 5px;
 }
